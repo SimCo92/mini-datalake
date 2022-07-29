@@ -10,7 +10,7 @@ We fetch the data from the [yelp-dataset](https://www.kaggle.com/yelp-dataset/ye
 ### Manual download
 Place the data under the folder `mnt/airflow/files/yelp-dataset` and it will be automatically copied into the container.
 like in the screenshot:
-![](doc/data_folder.png)
+<img src="doc/data_folder.png" width="400"/>
 
 ### Kaggle API
 To fetch the data from the Kaggle API the kaggle token need to be placed in `docker/airflow/api/kaggle/kaggle.json`. (NOT TESTED)
@@ -45,9 +45,12 @@ bash reset.sh
 
 ## Connection needed on AirFlow
 ### Hue
-![](doc/hive_conn.png)
+
+<img src="doc/hive_conn.png" width="600"/>
+
 ### Spark
-![](doc/spark_conn.png)
+
+<img src="doc/spark_conn.png" width="600"/>
 
 ## Airflow DAG
 The developed pipeline name is `ingest_yelp_from_local`.
