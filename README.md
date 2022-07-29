@@ -1,4 +1,4 @@
-#DATALAKE-NY
+# MINI-DATALAKE
 
 This is a "small" data lake created for the NewYorkers assessment.
 It includes all the strictly mandatory component (Spark, Hadoop, Hive) and also some useful tools (Airflow, Hue)
