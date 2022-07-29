@@ -46,11 +46,11 @@ bash reset.sh
 ## Connection needed on AirFlow
 ### Hue
 
-<img src="doc/hive_conn.png" width="600"/>
+<img src="doc/hive_conn.png" width="300"/>
 
 ### Spark
 
-<img src="doc/spark_conn.png" width="600"/>
+<img src="doc/spark_conn.png" width="300"/>
 
 ## Airflow DAG
 The developed pipeline name is `ingest_yelp_from_local`.
