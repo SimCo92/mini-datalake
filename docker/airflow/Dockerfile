@@ -55,7 +55,7 @@ COPY ./api/kaggle/kaggle.json ${AIRFLOW_HOME}/.kaggle/kaggle.json
 COPY . ${AIRFLOW_HOME}/
 
 # Copy the airflow.cfg file (config)
-#COPY ./config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
+COPY ./config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 
 # Set the owner of the files in AIRFLOW_HOME to the user airflow
 RUN chown -R airflow: ${AIRFLOW_HOME}
