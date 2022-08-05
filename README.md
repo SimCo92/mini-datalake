@@ -34,21 +34,33 @@ bash reset.sh
 
 ## Service ports table
 
-| service | port                   |
-|---------|------------------------|
-| Airflow | http://localhost:8080  |
-| Hue     | http://localhost:32762 |
-| HDFS    | http://localhost:32763 |
-| ..      | http://localhost:..    |
+| service | port                  |
+|--------|-----------------------|
+| Airflow | http://localhost:8080 |
+| Hue    | http://localhost:32762 |
+| HDFS   | http://localhost:32763 |
+| Spark  | http://localhost:32766 |
 
 
 
 ## Connection needed on AirFlow
 ### Hue
 
+- Conn id: hive-conn
+- Conn Type: Hive Server 2 Thrift
+- Host: hive-server
+- Login: hive (check docker/postgres/init-hive-db.sh)
+- Password: hive (check docker/postgres/init-hive-db.sh)
+- Port: 10000
+
 <img src="doc/hive_conn.png" width="300"/>
 
 ### Spark
+
+- Conn id: spark-conn
+- Conn Type: Spark
+- Host: spark://spark-master
+- Port: 7077
 
 <img src="doc/spark_conn.png" width="300"/>
 
@@ -60,7 +72,16 @@ If you are not familiar to Airflow, you can check the [Airflow documentation](ht
 The result can be checked on Hue.
 
 ## Debugging
-To debug the pipeline you can use the following commands:
+To debug the pipeline you can enter into the container with the command:
+```
+# to list all the containers IDs
+docker ps
+
+# to enter container shell
+docker exec -it <container_id> /bin/bash
+```
+
+If any of the service is not working I suggest to restart all the services with these commands:
 ```
 bash stop.sh
 bash start.sh
